@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aanya ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;font-family:Segoe UI,sans-serif;background:linear-gradient(135deg,#ffd6e7,#f8b8d2,#e8c7ff);display:flex;justify-content:center;align-items:center;color:#5a2342}
+.card{width:min(92%,520px);min-height:650px;padding:42px 25px;text-align:center;position:relative;overflow:hidden;border-radius:30px;background:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.65);box-shadow:0 20px 60px rgba(104,38,82,.25);backdrop-filter:blur(12px)}
+.sparkle{font-size:30px;animation:pulse 1.6s infinite}
+h1{margin:12px 0 8px;font-family:Georgia,serif;font-size:clamp(38px,10vw,62px);line-height:1.05;color:#9c2459;text-shadow:2px 3px 0 rgba(255,255,255,.7)}
+.name{font-size:25px;font-weight:700;color:#742043;margin-bottom:25px}
+.message{max-width:420px;margin:auto;font-size:17px;line-height:1.75;color:#54243c}
+.hearts{margin:28px 0;font-size:30px;letter-spacing:10px;animation:pulse 1.5s infinite}
+button{border:0;padding:15px 28px;border-radius:999px;background:#d83d78;color:white;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(216,61,120,.35);transition:.2s}
+button:hover{transform:translateY(-3px) scale(1.03)}
+#surprise{display:none;margin-top:25px;font-family:Georgia,serif;font-size:22px;color:#8e1f50}
+.footer{position:absolute;bottom:20px;left:0;width:100%;font-size:13px;opacity:.75}
+.heart{position:fixed;bottom:-30px;pointer-events:none;animation:floatUp linear forwards;z-index:10}
+.confetti{position:fixed;width:8px;height:12px;top:-20px;pointer-events:none;animation:fall linear forwards;z-index:20}
+@keyframes floatUp{from{transform:translateY(0) rotate(0);opacity:1}to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@keyframes fall{from{transform:translateY(0) rotate(0);opacity:1}to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@keyframes pulse{50%{transform:scale(1.08)}}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="sparkle">✨ 💗 ✨</div>
+<h1>Happy Birthday!</h1>
+<div class="name">Aanya — My Annu 💕</div>
+<div class="message">
+Today is all about celebrating you, Aanya. 💖<br><br>
+You bring so much happiness, warmth and beautiful moments into the lives of the people around you.
+May your birthday be filled with smiles, laughter, love and everything your heart wishes for. ✨
+<br><br>
+Keep smiling, keep shining and always stay the wonderful person you are. 🌸
+</div>
+<div class="hearts">💗 💕 💗</div>
+<button onclick="celebrate()">Start the Celebration 🎉</button>
+<div id="surprise">Happy Birthday, Annu! 🥹💗<br>You deserve all the happiness in the world. ✨</div>
+<div class="footer">Made with ❤️ especially for Aanya</div>
+</div>
+<script>
+function createHeart(){
+ const h=document.createElement("div");
+ h.className="heart";
+ h.textContent=["❤️","💗","💕","💖","💘"][Math.floor(Math.random()*5)];
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(18+Math.random()*25)+"px";
+ h.style.animationDuration=(4+Math.random()*5)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),9000);
+}
+setInterval(createHeart,650);
+function celebrate(){
+ document.getElementById("surprise").style.display="block";
+ for(let i=0;i<100;i++){
+  const p=document.createElement("div");
+  p.className="confetti";
+  p.style.left=Math.random()*100+"vw";
+  p.style.animationDuration=(2+Math.random()*3)+"s";
+  p.style.background=`hsl(${Math.random()*360},80%,60%)`;
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),5500);
+ }
+}
+</script>
+</body>
+</html>
